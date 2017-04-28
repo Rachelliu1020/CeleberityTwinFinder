@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Similar Face Home Page";
+}
+
+@using similarFace.Models
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="/Content/Images/banner1.png" alt="asp.net" class="img-responsive" />
+        </div>
+    </div>
+</div>
+
+
+<div class="container" style="padding-top: 24px">
+    <div class="row">
+        <h2 style="text-align:center">Please upload your photo to see the result!</h2>
+        <div style="text-align:center">
+            <h3 name="error" class="text-danger">@ViewBag.error</h3>
+        </div>
+        <div class="buttonDiv">
+            @using (Html.BeginForm("UploadUserPic", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <input type="file" name="file" id="upload" style="display: none" onchange="$('#submit').click();" />
+                <input type="button" value="Upload a Photo" class="btn btn-primary btn-lg" onclick="$('#upload').click();" />
+                <input type="submit" id="submit" style="display: none" />
+            }
+        </div>
+        <div class="col-sm-4 pull-right">
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="imageDiv">
+            <h1 style="text-align:center">@ViewBag.percent</h1>
+            @foreach (UserInfo blob in ViewBag.Userblobs)
+            {
+                <img src="@blob.ImageUri" width="292" style="padding-right: 16px; padding-bottom: 16px" />
+            }
+            @foreach (CelebrityInfo blob in ViewBag.Celebrityblobs)
+            {
+                <img src="@blob.ImageUri" title="@blob.SimilarPercent%" width="292" style="padding-right: 16px; padding-bottom: 16px" />
+            }
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" language="javascript">
+        if ("@TempData["Message"]" !== "") {
+            alert("@TempData["Message"]");
+        }
+    </script>
+}
+

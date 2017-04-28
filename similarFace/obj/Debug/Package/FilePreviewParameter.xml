@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="similarFace" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\virtualStudio\\FaceRecognize\\similar\\similarFace\\similarFace\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\virtualStudio\\FaceRecognize\\similar\\similarFace\\similarFace\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:similarfacedbserver.database.windows.net,1433;Initial Catalog=similarFace_db;User Id=rachelliu1020@similarfacedbserver;Password=10200308xKx_" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\virtualStudio\\FaceRecognize\\similar\\similarFace\\similarFace\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

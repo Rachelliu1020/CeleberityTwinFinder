@@ -1,0 +1,6 @@
+﻿//migration
+Enable-Migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\usermigration
+//every change
+add-migration -ConfigurationTypeName similarFace.Migrations.usermigration.Configuration "FirstMigration"
+
+update-database -ConfigurationTypeName similarFace.Migrations.usermigration.Configuration
