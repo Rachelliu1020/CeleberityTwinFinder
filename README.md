@@ -1,4 +1,4 @@
-# Celeberity Twin Finder
+# Celebrity Twin Finder
 
 ASP.NET Web App
 http://similarface.azurewebsites.net/
